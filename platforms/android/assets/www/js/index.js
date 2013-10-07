@@ -74,7 +74,7 @@ $(document).on('pageinit', '#index-page', function () { console.log("%c pageload
 });
 
 $(document).on('pageinit', '#main-page', function () { console.log("%c pageload mainPage", "color: blue;");
-
+	getStories();
 });
 
 $(document).on('pageinit', '#login-page', function () { console.log("%c pageload loginPage", "color: blue;");
@@ -86,6 +86,35 @@ $(document).on('pageinit', '#register-page', function () { console.log("%c pagel
 	// deals with the form
 	parseForm();
 });
+
+function getStories()
+{
+	var stories = $('#stories');
+	$.when(sendAjax({}, 'get-text-stories')).then(function(data){
+		console.log(data);
+		stories.html(parseStories(data));
+		stories.find('ul').listview('refresh',true);
+	});
+}
+
+function parseStories(data)
+{
+	var html = '<ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true">';
+
+	$.each(data, function( index, value ) {
+		html += '<li>' +
+			'<div data-role="collapsible">' +
+				'<h4>' + value.title + '</h4>' +
+				'<a href="audio.html?id=' + value.id + '" class="ui-btn ui-btn-inline">play audio</a>' +
+				'<a href="text.html?id=' + value.id + '" class="ui-btn ui-btn-inline">read text</a>' +
+			'</div>' +
+		'</li>';
+	});
+
+	html += '</ul>';
+
+	return html;
+}
 
 function parseForm()
 {

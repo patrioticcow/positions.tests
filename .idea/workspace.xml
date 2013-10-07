@@ -9,7 +9,16 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="WARN" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c1885fe-72e9-4668-ab0e-7d45b1bdc594" name="Default" comment="" />
+    <list default="true" id="9c1885fe-72e9-4668-ab0e-7d45b1bdc594" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/audio.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/text.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/faq.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/index.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/index.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/main.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="sex.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,13 +81,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="register.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/register.html">
+      <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="87" selection-start="651" selection-end="651" vertical-scroll-proportion="-8.965517" vertical-offset="0" max-vertical-offset="800">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="28" column="17" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.661157" vertical-offset="0" max-vertical-offset="1080">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,37 +93,8 @@
       <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="44" selection-start="3589" selection-end="3589" vertical-scroll-proportion="-13.72" vertical-offset="1737" max-vertical-offset="4420">
+            <state line="103" column="39" selection-start="3596" selection-end="3596" vertical-scroll-proportion="0.0" vertical-offset="1520" max-vertical-offset="5000">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="faq.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/faq.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="39" selection-start="405" selection-end="421" vertical-scroll-proportion="-9.655172" vertical-offset="0" max-vertical-offset="500">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="63" selection-start="625" selection-end="625" vertical-scroll-proportion="0.30769232" vertical-offset="0" max-vertical-offset="845">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="67" selection-start="759" selection-end="759" vertical-scroll-proportion="-12.413794" vertical-offset="0" max-vertical-offset="1240">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -128,6 +106,9 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GitLogSettings">
     <option name="myDateState">
       <MyDateState />
@@ -136,21 +117,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/jquery/jquery.js" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/cordova.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/jqm/jquery.mobile-1.4.0-beta.1.min.css" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/faq.html" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/login.html" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/css/index.css" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/functions.js" />
         <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/platforms/android/src/com/paypal/android/sdk/phonegap/PayPalMobilePGPlugin.java" />
         <option value="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/PayPalMobilePGPlugin.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/register.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/audio.html" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/faq.html" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/css/index.css" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/text.html" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/main.html" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" />
       </list>
     </option>
   </component>
@@ -170,7 +152,7 @@
     <OptionsSetting value="true" id="Edit" />
     <OptionsSetting value="true" id="Undo Check Out" />
     <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -189,6 +171,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,17 +334,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -382,7 +360,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -670,12 +648,14 @@
       <updated>1381006990940</updated>
       <workItem from="1381006993553" duration="3393000" />
       <workItem from="1381022855290" duration="8233000" />
-      <workItem from="1381104747530" duration="7016000" />
+      <workItem from="1381104747530" duration="7415000" />
+      <workItem from="1381114911897" duration="5457000" />
+      <workItem from="1381120787197" duration="1226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18642000" />
+    <option name="totallyTimeSpent" value="25724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
@@ -695,7 +675,6 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -709,6 +688,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -728,146 +708,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/img/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/libs/jqm/jquery.mobile-1.4.0-beta.1.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="153357" selection-start="153503" selection-end="153503" vertical-scroll-proportion="0.046349943" vertical-offset="0" max-vertical-offset="863">
-          <folding>
-            <element signature="e#185#1235#2" expanded="false" />
-            <element signature="e#1278#2303#2" expanded="false" />
-            <element signature="e#2346#3371#2" expanded="false" />
-            <element signature="e#3412#4425#2" expanded="false" />
-            <element signature="e#4466#5480#2" expanded="false" />
-            <element signature="e#5521#6534#2" expanded="false" />
-            <element signature="e#6577#7602#2" expanded="false" />
-            <element signature="e#7645#8670#2" expanded="false" />
-            <element signature="e#8711#9725#2" expanded="false" />
-            <element signature="e#9764#11192#2" expanded="false" />
-            <element signature="e#11234#12562#2" expanded="false" />
-            <element signature="e#12602#13954#2" expanded="false" />
-            <element signature="e#13995#14997#2" expanded="false" />
-            <element signature="e#15038#16040#2" expanded="false" />
-            <element signature="e#16081#17083#2" expanded="false" />
-            <element signature="e#17124#18126#2" expanded="false" />
-            <element signature="e#18219#19263#2" expanded="false" />
-            <element signature="e#19302#20556#2" expanded="false" />
-            <element signature="e#20595#21871#2" expanded="false" />
-            <element signature="e#21909#24095#2" expanded="false" />
-            <element signature="e#24133#25142#2" expanded="false" />
-            <element signature="e#25179#26377#2" expanded="false" />
-            <element signature="e#26415#29446#2" expanded="false" />
-            <element signature="e#29485#30579#2" expanded="false" />
-            <element signature="e#30617#31667#2" expanded="false" />
-            <element signature="e#31705#32870#2" expanded="false" />
-            <element signature="e#32911#34453#2" expanded="false" />
-            <element signature="e#34491#35760#2" expanded="false" />
-            <element signature="e#35804#36793#2" expanded="false" />
-            <element signature="e#36831#38045#2" expanded="false" />
-            <element signature="e#38085#39378#2" expanded="false" />
-            <element signature="e#39420#40562#2" expanded="false" />
-            <element signature="e#40601#41570#2" expanded="false" />
-            <element signature="e#41613#43171#2" expanded="false" />
-            <element signature="e#43209#44226#2" expanded="false" />
-            <element signature="e#44264#45798#2" expanded="false" />
-            <element signature="e#45837#47513#2" expanded="false" />
-            <element signature="e#47551#48606#2" expanded="false" />
-            <element signature="e#48645#50306#2" expanded="false" />
-            <element signature="e#50347#51610#2" expanded="false" />
-            <element signature="e#51651#52694#2" expanded="false" />
-            <element signature="e#52735#54077#2" expanded="false" />
-            <element signature="e#54115#55395#2" expanded="false" />
-            <element signature="e#55436#56526#2" expanded="false" />
-            <element signature="e#56564#57613#2" expanded="false" />
-            <element signature="e#57650#58714#2" expanded="false" />
-            <element signature="e#58752#59800#2" expanded="false" />
-            <element signature="e#59839#60946#2" expanded="false" />
-            <element signature="e#60985#62160#2" expanded="false" />
-            <element signature="e#62200#63261#2" expanded="false" />
-            <element signature="e#63348#64376#2" expanded="false" />
-            <element signature="e#64465#65456#2" expanded="false" />
-            <element signature="e#65549#66552#2" expanded="false" />
-            <element signature="e#66645#67648#2" expanded="false" />
-            <element signature="e#67737#68729#2" expanded="false" />
-            <element signature="e#68818#69809#2" expanded="false" />
-            <element signature="e#69898#70890#2" expanded="false" />
-            <element signature="e#70983#71986#2" expanded="false" />
-            <element signature="e#72079#73082#2" expanded="false" />
-            <element signature="e#73167#74573#2" expanded="false" />
-            <element signature="e#74664#75970#2" expanded="false" />
-            <element signature="e#76057#77387#2" expanded="false" />
-            <element signature="e#77476#78456#2" expanded="false" />
-            <element signature="e#78545#79525#2" expanded="false" />
-            <element signature="e#79614#80594#2" expanded="false" />
-            <element signature="e#80683#81663#2" expanded="false" />
-            <element signature="e#81871#82893#2" expanded="false" />
-            <element signature="e#82978#84210#2" expanded="false" />
-            <element signature="e#84295#85549#2" expanded="false" />
-            <element signature="e#85632#87796#2" expanded="false" />
-            <element signature="e#87879#88866#2" expanded="false" />
-            <element signature="e#88947#90123#2" expanded="false" />
-            <element signature="e#90206#93215#2" expanded="false" />
-            <element signature="e#93300#94372#2" expanded="false" />
-            <element signature="e#94455#95483#2" expanded="false" />
-            <element signature="e#95566#96709#2" expanded="false" />
-            <element signature="e#96792#98039#2" expanded="false" />
-            <element signature="e#98128#99648#2" expanded="false" />
-            <element signature="e#99743#100710#2" expanded="false" />
-            <element signature="e#100793#101985#2" expanded="false" />
-            <element signature="e#102095#103366#2" expanded="false" />
-            <element signature="e#103457#104577#2" expanded="false" />
-            <element signature="e#104662#105609#2" expanded="false" />
-            <element signature="e#105702#107238#2" expanded="false" />
-            <element signature="e#107321#108316#2" expanded="false" />
-            <element signature="e#108399#109911#2" expanded="false" />
-            <element signature="e#109996#111650#2" expanded="false" />
-            <element signature="e#111733#112766#2" expanded="false" />
-            <element signature="e#112851#114490#2" expanded="false" />
-            <element signature="e#114579#115820#2" expanded="false" />
-            <element signature="e#115909#116930#2" expanded="false" />
-            <element signature="e#117019#118339#2" expanded="false" />
-            <element signature="e#118422#119680#2" expanded="false" />
-            <element signature="e#119769#120837#2" expanded="false" />
-            <element signature="e#120920#121947#2" expanded="false" />
-            <element signature="e#122028#123070#2" expanded="false" />
-            <element signature="e#123153#124179#2" expanded="false" />
-            <element signature="e#124264#125349#2" expanded="false" />
-            <element signature="e#125434#126587#2" expanded="false" />
-            <element signature="e#126674#127713#2" expanded="false" />
-            <element signature="e#188207#188294#2" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="686" selection-end="686" vertical-scroll-proportion="0.3846154" vertical-offset="0" max-vertical-offset="832">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="5" selection-start="3645" selection-end="3645" vertical-scroll-proportion="1.3441483" vertical-offset="0" max-vertical-offset="1280">
-          <folding />
-        </state>
+        <state line="58" column="5" selection-start="3645" selection-end="3645" vertical-scroll-proportion="1.3441483" vertical-offset="0" max-vertical-offset="1280" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/src/com/audio/sex/sex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="911" selection-end="939" vertical-scroll-proportion="0.11415525" vertical-offset="0" max-vertical-offset="876">
-          <folding />
-        </state>
+        <state line="22" column="0" selection-start="911" selection-end="939" vertical-scroll-proportion="0.11415525" vertical-offset="0" max-vertical-offset="876" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
@@ -886,11 +734,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/src/com/paypal/android/sdk/phonegap/PayPalMobilePGPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="0.3196347" vertical-offset="0" max-vertical-offset="2880">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="14" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="0.3196347" vertical-offset="0" max-vertical-offset="2880" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
@@ -900,41 +744,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/register.html">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="87" selection-start="651" selection-end="651" vertical-scroll-proportion="-8.965517" vertical-offset="0" max-vertical-offset="800">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="3" column="8" selection-start="17" selection-end="17" vertical-scroll-proportion="0.06864989" vertical-offset="0" max-vertical-offset="874" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/audio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="61" selection-start="0" selection-end="1177" vertical-scroll-proportion="-6.206897" vertical-offset="0" max-vertical-offset="780">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="67" selection-start="759" selection-end="759" vertical-scroll-proportion="-12.413794" vertical-offset="0" max-vertical-offset="1240">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="19" column="49" selection-start="784" selection-end="817" vertical-scroll-proportion="-13.103448" vertical-offset="0" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="21" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.33295193" vertical-offset="909" max-vertical-offset="4540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="87" selection-start="651" selection-end="651" vertical-scroll-proportion="-8.965517" vertical-offset="0" max-vertical-offset="800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/text.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="6" selection-start="535" selection-end="535" vertical-scroll-proportion="-13.103448" vertical-offset="0" max-vertical-offset="500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="36" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="140" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/faq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="6" selection-start="546" selection-end="546" vertical-scroll-proportion="0.4733728" vertical-offset="0" max-vertical-offset="845">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="44" selection-start="3589" selection-end="3589" vertical-scroll-proportion="-13.72" vertical-offset="1737" max-vertical-offset="4420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/faq.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="405" selection-end="421" vertical-scroll-proportion="-9.655172" vertical-offset="0" max-vertical-offset="500">
+        <state line="103" column="39" selection-start="3596" selection-end="3596" vertical-scroll-proportion="0.0" vertical-offset="1520" max-vertical-offset="5000">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="63" selection-start="625" selection-end="625" vertical-scroll-proportion="0.30769232" vertical-offset="0" max-vertical-offset="845">
+        <state line="28" column="17" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.661157" vertical-offset="0" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
@@ -968,7 +839,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jquery.mobile-1.4.0-beta.1.min</last-edited>
+          <last-edited>jquery-2.0.3.min</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

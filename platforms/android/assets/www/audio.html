@@ -1,0 +1,34 @@
+<div data-role="page" id="audio-page" data-theme="b">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Audio</h1>
+    </div>
+
+    <div data-role="content">
+        <div id="player">
+            <div id="media-info">
+                <p>You're listening to: <span id="media-name"></span></p>
+                <p>Located at: <span id="media-path"></span></p>
+                <div>
+                    Played: <label id="media-played">-</label> of <label id="media-duration">-</label>
+                    <input type="range" name="time-slider" id="time-slider" value="0" min="0" max="100" data-highlight="true" />
+                </div>
+            </div>
+            <a href="#" id="player-play" title="Play / Pause"></a>
+            <a href="#" id="player-stop" title="Stop"></a>
+        </div>
+        <div id="about">
+
+        </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="main.html" data-icon="bars" class="ui-btn-active">Stories</a></li>
+                <li><a href="faq.html" data-icon="gear">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
