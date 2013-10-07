@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/android.iml" filepath="$PROJECT_DIR$/platforms/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.battery-status/src/org.apache.cordova.battery-status.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.battery-status/src/org.apache.cordova.battery-status.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.camera/src/org.apache.cordova.camera.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.camera/src/org.apache.cordova.camera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.contacts/src/org.apache.cordova.contacts.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.contacts/src/org.apache.cordova.contacts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.device/src/org.apache.cordova.device.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.device/src/org.apache.cordova.device.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.device-motion/src/org.apache.cordova.device-motion.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.device-motion/src/org.apache.cordova.device-motion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.device-orientation/src/org.apache.cordova.device-orientation.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.device-orientation/src/org.apache.cordova.device-orientation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.dialogs/src/org.apache.cordova.dialogs.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.dialogs/src/org.apache.cordova.dialogs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.file/src/org.apache.cordova.file.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.file/src/org.apache.cordova.file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/org.apache.cordova.file-transfer.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/org.apache.cordova.file-transfer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.geolocation/src/org.apache.cordova.geolocation.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.geolocation/src/org.apache.cordova.geolocation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.globalization/src/org.apache.cordova.globalization.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.globalization/src/org.apache.cordova.globalization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.media-capture/src/org.apache.cordova.media-capture.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.media-capture/src/org.apache.cordova.media-capture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.network-information/src/org.apache.cordova.network-information.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.network-information/src/org.apache.cordova.network-information.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.splashscreen/src/org.apache.cordova.splashscreen.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.splashscreen/src/org.apache.cordova.splashscreen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/org.apache.cordova.vibration/src/org.apache.cordova.vibration.iml" filepath="$PROJECT_DIR$/plugins/org.apache.cordova.vibration/src/org.apache.cordova.vibration.iml" />
+    </modules>
+  </component>
+</project>
+
