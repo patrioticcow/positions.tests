@@ -37,6 +37,7 @@ var app = {
 };
 
 var rest = 'http://sex.123easywebsites.com/rest/';
+var madiaUrl = 'http://sex.123easywebsites.com/audio/';
 
 $ (document).on ("pageinit", function () { console.log ("%c first time", "color: blue;");
 
@@ -73,8 +74,30 @@ $(document).on('pageinit', '#index-page', function () { console.log("%c pageload
 	}
 });
 
-$(document).on('pageinit', '#main-page', function () { console.log("%c pageload mainPage", "color: blue;");
+$(document).on('pageshow', '#main-page', function () { console.log("%c pageload mainPage", "color: blue;");
 	getStories();
+});
+
+$(document).on('pageshow', '#text-page', function () { console.log("%c pageload textPage", "color: blue;");
+	var obj = getStoryById();
+	$('.title').html('<h3>' + obj.title + '</h3>');
+	$('.story').html(obj.story);
+});
+
+$(document).on('pageshow', '#audio-page', function () { console.log("%c pageload audioPage", "color: blue;");
+	var obj = getStoryById();
+	var src = madiaUrl + obj.title + ".mp3";
+	var my_media = new Media(src, onSuccess, onError);
+
+	$('.playAudio').on("click", function(){
+		playAudio(my_media);
+	});
+	$('.pauseAudio').on("click", function(){
+		pauseAudio(my_media);
+	});
+	$('.stopAudio').on("click", function(){
+		stopAudio(my_media);
+	});
 });
 
 $(document).on('pageinit', '#login-page', function () { console.log("%c pageload loginPage", "color: blue;");
@@ -87,14 +110,29 @@ $(document).on('pageinit', '#register-page', function () { console.log("%c pagel
 	parseForm();
 });
 
+function getStoryById()
+{
+	var data = JSON.parse(window.localStorage.getItem("stories"));
+	var obj = data[getUrlId()];
+
+	return obj;
+}
+
 function getStories()
 {
 	var stories = $('#stories');
-	$.when(sendAjax({}, 'get-text-stories')).then(function(data){
-		console.log(data);
-		stories.html(parseStories(data));
-		stories.find('ul').listview('refresh',true);
-	});
+	var storiesStorage = window.localStorage.getItem("stories");
+
+	if(storiesStorage){
+		stories.html(parseStories(JSON.parse(storiesStorage)));
+		stories.enhanceWithin();
+	} else {
+		$.when(sendAjax({}, 'get-text-stories')).then(function(data){
+			window.localStorage.setItem("stories", JSON.stringify(data));
+			stories.html(parseStories(data));
+			stories.enhanceWithin();
+		});
+	}
 }
 
 function parseStories(data)
@@ -105,8 +143,8 @@ function parseStories(data)
 		html += '<li>' +
 			'<div data-role="collapsible">' +
 				'<h4>' + value.title + '</h4>' +
-				'<a href="audio.html?id=' + value.id + '" class="ui-btn ui-btn-inline">play audio</a>' +
-				'<a href="text.html?id=' + value.id + '" class="ui-btn ui-btn-inline">read text</a>' +
+				'<a href="audio.html?id=' + index + '" class="ui-btn ui-btn-inline">play audio</a>' +
+				'<a href="text.html?id=' + index + '" class="ui-btn ui-btn-inline">read text</a>' +
 			'</div>' +
 		'</li>';
 	});
@@ -242,4 +280,83 @@ function loader(hide)
 			textVisible: true
 		});
 	}
+}
+
+function getUrlId()
+{
+	var url = purl();
+	return purl(url.attr('fragment')).param('id');
+}
+
+
+//////////////////////////////////////////////
+var mediaTimer = null;
+
+function playAudio(my_media) {
+	my_media.play();
+
+	updateFileSize(my_media);
+	updateMediaPosition(my_media);
+}
+
+function updateFileSize(my_media)
+{
+	var dur = my_media.getDuration();
+	var duration = Math.ceil(dur / 60);
+	$('#media_duration').html(duration + " min");
+	$('#time_slider').attr('max', duration * 10);
+}
+
+function updateMediaPosition(my_media)
+{
+	// Update my_media position every second
+	if (mediaTimer == null) {
+		mediaTimer = setInterval(function() {
+			// get my_media position
+			my_media.getCurrentPosition(
+				// success callback
+				function(position) {
+					if (position > -1) {
+						setAudioPosition((Math.ceil(position)) + " sec");
+					}
+				},
+				// error callback
+				function(e) {
+					console.log("Error getting pos=" + e);
+					setAudioPosition("Error: " + e);
+				}
+			);
+		}, 1000);
+	}
+}
+
+// Pause audio
+function pauseAudio(my_media) {
+	if (my_media) {
+		my_media.pause();
+	}
+}
+
+// Stop audio
+function stopAudio(my_media) {
+	if (my_media) {
+		my_media.stop();
+	}
+	clearInterval(mediaTimer);
+	mediaTimer = null;
+}
+
+// onSuccess Callback
+function onSuccess() {
+	console.log("playAudio():Audio Success");
+}
+
+// onError Callback
+function onError(error) {
+	alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+}
+
+// Set audio position
+function setAudioPosition(position) {
+	document.getElementById('media_played').innerHTML = position;
 }

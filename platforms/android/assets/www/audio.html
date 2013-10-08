@@ -6,16 +6,19 @@
 
     <div data-role="content">
         <div id="player">
-            <div id="media-info">
-                <p>You're listening to: <span id="media-name"></span></p>
-                <p>Located at: <span id="media-path"></span></p>
-                <div>
-                    Played: <label id="media-played">-</label> of <label id="media-duration">-</label>
-                    <input type="range" name="time-slider" id="time-slider" value="0" min="0" max="100" data-highlight="true" />
-                </div>
+            <p>You're listening to: <span id="media-name"></span></p>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">Played: <span id="media_played"></span></div>
+                <div class="ui-block-b">of <span id="media_duration"></span></div>
             </div>
-            <a href="#" id="player-play" title="Play / Pause"></a>
-            <a href="#" id="player-stop" title="Stop"></a>
+            <br/>
+            <input type="range" name="time-slider" id="time_slider" value="0" min="0" max="100" data-highlight="true" />
+            <br/>
+            <div class="ui-grid-b">
+                <div class="ui-block-a"><a href="#" class="playAudio" data-role="button" data-icon="arrow-l">Play</a></div>
+                <div class="ui-block-b"><a href="#" class="pauseAudio" data-role="button" data-icon="plus">Pause</a></div>
+                <div class="ui-block-c"><a href="#" class="stopAudio" data-role="button" data-icon="check">Stop</a></div>
+            </div>
         </div>
         <div id="about">
 
