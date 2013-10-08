@@ -9,16 +9,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c1885fe-72e9-4668-ab0e-7d45b1bdc594" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/libs/jquery.URI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/index.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/index.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/main.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/text.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/text.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9c1885fe-72e9-4668-ab0e-7d45b1bdc594" name="Default" comment="" />
     <ignored path="sex.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,10 +81,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="289" column="0" selection-start="8810" selection-end="8810" vertical-scroll-proportion="4.046911" vertical-offset="2243" max-vertical-offset="7340">
+            <state line="289" column="0" selection-start="8810" selection-end="8810" vertical-scroll-proportion="0.0" vertical-offset="2243" max-vertical-offset="7340">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.properties" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/platforms/android/project.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.045766592" vertical-offset="0" max-vertical-offset="874">
               <folding />
             </state>
           </provider>
@@ -117,7 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/login.html" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/functions.js" />
         <option value="$PROJECT_DIR$/platforms/android/src/com/paypal/android/sdk/phonegap/PayPalMobilePGPlugin.java" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/PayPalMobilePGPlugin.js" />
@@ -133,6 +132,7 @@
         <option value="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/audio.html" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" />
+        <option value="$PROJECT_DIR$/platforms/android/project.properties" />
       </list>
     </option>
   </component>
@@ -574,12 +574,12 @@
       <workItem from="1381022855290" duration="8233000" />
       <workItem from="1381104747530" duration="7415000" />
       <workItem from="1381114911897" duration="5457000" />
-      <workItem from="1381120787197" duration="12626000" />
+      <workItem from="1381120787197" duration="12947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37124000" />
+    <option name="totallyTimeSpent" value="37445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
@@ -632,13 +632,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="21" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.33295193" vertical-offset="909" max-vertical-offset="4540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="87" selection-start="651" selection-end="651" vertical-scroll-proportion="-8.965517" vertical-offset="0" max-vertical-offset="800">
@@ -741,7 +734,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="0" selection-start="8810" selection-end="8810" vertical-scroll-proportion="4.046911" vertical-offset="2243" max-vertical-offset="7340">
+        <state line="289" column="0" selection-start="8810" selection-end="8810" vertical-scroll-proportion="0.0" vertical-offset="2243" max-vertical-offset="7340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/project.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.045766592" vertical-offset="0" max-vertical-offset="874">
           <folding />
         </state>
       </provider>
