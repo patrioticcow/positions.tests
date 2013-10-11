@@ -6,18 +6,30 @@
 
     <div data-role="content">
         <div id="player">
-            <p>You're listening to: <span id="media-name"></span></p>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">Played: <span id="media_played"></span></div>
-                <div class="ui-block-b">of <span id="media_duration"></span></div>
+            <div class="ui-body ui-body-a ui-corner-all">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><p>Enable Interactivity: </p></div>
+                    <div class="ui-block-b">
+                        <select name="interactivity" id="interactivity" data-role="slider">
+                            <option value="off">Off</option>
+                            <option value="on">On</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <br/>
-            <input type="range" name="time-slider" id="time_slider" value="0" min="0" max="100" data-highlight="true" />
+            <div class="ui-body ui-body-a ui-corner-all">You're listening to: <strong><span id="media_name"></span></strong></div>
+            <br/>
+            <div class="ui-body ui-body-a ui-corner-all">Duration: <strong><span id="media_duration"></span></strong></div>
+            <br/>
+            <div class="ui-body ui-body-a ui-corner-all">
+                <input type="range" name="time_slider" id="time_slider" value="0" min="0" max="100" data-highlight="true" />
+            </div>
             <br/>
             <div class="ui-grid-b">
-                <div class="ui-block-a"><a href="#" class="playAudio" data-role="button" data-icon="arrow-l">Play</a></div>
-                <div class="ui-block-b"><a href="#" class="pauseAudio" data-role="button" data-icon="plus">Pause</a></div>
-                <div class="ui-block-c"><a href="#" class="stopAudio" data-role="button" data-icon="check">Stop</a></div>
+                <div class="ui-block-a"><a href="#" class="playAudio" data-theme="a" data-role="button" data-icon="arrow-r">Play</a></div>
+                <div class="ui-block-b"><a href="#" class="pauseAudio" data-theme="a" data-role="button" data-icon="minus">Pause</a></div>
+                <div class="ui-block-c"><a href="#" class="stopAudio" data-theme="a" data-role="button" data-icon="delete">Stop</a></div>
             </div>
         </div>
         <div id="about">
@@ -28,8 +40,8 @@
     <div data-role="footer" data-position="fixed">
         <div data-role="navbar">
             <ul>
-                <li><a href="main.html" data-icon="bars" class="ui-btn-active">Stories</a></li>
-                <li><a href="faq.html" data-icon="gear">FAQ</a></li>
+                <li><a href="main.html" class="stopAudio" data-icon="bars">Stories</a></li>
+                <li><a href="faq.html" class="stopAudio" data-icon="gear">FAQ</a></li>
             </ul>
         </div>
     </div>
