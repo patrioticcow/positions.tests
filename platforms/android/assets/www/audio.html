@@ -6,20 +6,22 @@
 
     <div data-role="content">
         <div id="player">
-            <div class="ui-body ui-body-a ui-corner-all">
-                <div class="ui-grid-a">
-                    <div class="ui-block-a"><p>Enable Interactivity: </p></div>
-                    <div class="ui-block-b">
-                        <select name="interactivity" id="interactivity" data-role="slider">
-                            <option value="off">Off</option>
-                            <option value="on">On</option>
-                        </select>
+            <div class="ui-body ui-body-a ui-corner-all" style="text-align: center;"><h2><span class="media_name"></span></h2></div>
+            <br/>
+            <div class="show_interactivity" style="display:none">
+                <div class="ui-body ui-body-a ui-corner-all">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><p>Enable Interactivity: </p></div>
+                        <div class="ui-block-b">
+                            <select name="interactivity" id="interactivity" data-role="slider">
+                                <option value="off">Off</option>
+                                <option value="on">On</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+                <br/>
             </div>
-            <br/>
-            <div class="ui-body ui-body-a ui-corner-all">You're listening to: <strong><span id="media_name"></span></strong></div>
-            <br/>
             <div class="ui-body ui-body-a ui-corner-all">Duration: <strong><span id="media_duration"></span></strong></div>
             <br/>
             <div class="ui-body ui-body-a ui-corner-all">
@@ -32,9 +34,13 @@
                 <div class="ui-block-c"><a href="#" class="stopAudio" data-theme="a" data-role="button" data-icon="delete">Stop</a></div>
             </div>
         </div>
-        <div id="about">
 
+        <div data-role="popup" id="optionsDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" class="ui-corner-all" style="min-width:22em">
+            <div data-role="header" data-theme="a" class="ui-corner-top"><h1>Select an Option</h1></div>
+            <div data-role="content" id="options" data-theme="a" class="ui-corner-bottom ui-content">no options</div>
         </div>
+
+        <div id="about"></div>
     </div>
 
     <div data-role="footer" data-position="fixed">

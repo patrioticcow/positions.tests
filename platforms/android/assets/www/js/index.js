@@ -36,11 +36,15 @@ var app = {
 	}
 };
 
-var rest = 'http://sex.123easywebsites.com/rest/';
-var madiaUrl = 'http://sex.123easywebsites.com/audio/';
-var my_media = null;
-var dur = null;
-var audioChapters = [];
+var rest = 'http://sex.123easywebsites.com/rest/',
+	madiaUrl = 'http://sex.123easywebsites.com/audio/',
+	my_media = null,
+	dur = null,
+	audioChapters = [],
+	baseUrl = null,
+	roundPosition = null,
+	roundDur = null,
+	obj = null;
 
 $ (document).on ("pageinit", function () {
 	console.log ("%c first time", "color: blue;");
@@ -82,76 +86,70 @@ $ (document).on ('pageshow', '#main-page', function () {
 });
 
 $ (document).on ('pageshow', '#text-page', function () {
-	console.log ("%c pageload textPage", "color: blue;");
-	var obj = getStoryById ();
+	obj = getStoryById ();
+
 	$ ('.title').html ('<h3>' + obj.title + '</h3>');
 	$ ('.story').html (obj.story);
 });
 
 $ (document).on ('pageshow', '#audio-page', function () {
-	console.log ("%c pageload audioPage", "color: blue;");
-	var obj = getStoryById ();
-	var chapters = parseInt (obj.chapters);
 
-	for (var i = 1; i <= chapters; i++) {
-		audioChapters.push (madiaUrl + obj.title + '/' + obj.title + '_' + i + ".mp3");
+	obj = getStoryById ();
+
+	baseUrl = madiaUrl + obj.title + '/' + obj.title;
+	window.localStorage.setItem ("base_url", baseUrl);
+
+	if (obj.is_interactive === '1') {
+		$ ('.show_interactivity').show ();
 	}
 
-	console.log (audioChapters);
-	console.log (obj);
+	// set initial media file to play
+	window.localStorage.setItem ("src", madiaUrl + obj.title + '/' + obj.title + ".mp3");
+	$ ('#interactivity').on ('change', function () {
+		stopAudio ();
+		if ($ (this).val () === 'on') {
+			window.localStorage.setItem ("src", madiaUrl + obj.title + '/' + obj.title + '_1' + ".mp3");
+		}
+		else {
+			window.localStorage.setItem ("src", madiaUrl + obj.title + '/' + obj.title + ".mp3");
+		}
+	});
 
-	//var src = madiaUrl + obj.title + ".mp3";
-
-	$ ('#media_name').html (getTitle (obj.title));
-
-	window.localStorage.setItem ("chapter", 0);
-
-	my_media = new Media (audioChapters[0], onSuccess, onError, mediaStatus);
+	// set file title
+	$ ('.media_name').html (getTitle (obj.title));
 
 	$ ('.playAudio').on ("vclick", function () {
-		playAudio (my_media);
+		window.localStorage.setItem ("go-to", 1);
+		playAudio ();
 	});
 	$ ('.pauseAudio').on ("vclick", function () {
-		pauseAudio (my_media);
+		pauseAudio ();
 	});
 	$ ('.stopAudio').on ("vclick", function () {
-		stopAudio (my_media);
-		releaseAudio (my_media);
+		stopAudio ();
 	});
 
 	$ ('#time_slider').on ("slidestop", function () {
 		var timerVal = $ (this).val ();
-		seekAudio (my_media, timerVal * 1000);
+		seekAudio (timerVal * 1000);
 	});
 });
 
 $ (document).on ('pageinit', '#login-page', function () {
-	console.log ("%c pageload loginPage", "color: blue;");
-	// deals with the form
 	parseForm ();
 });
-
 $ (document).on ('pageinit', '#register-page', function () {
-	console.log ("%c pageload registerPage", "color: blue;");
-	// deals with the form
 	parseForm ();
 });
-
-function getMediaPath (int) {
-	var curChapter = parseInt (window.localStorage.getItem ("chapter")) + int;
-	return audioChapters[curChapter];
-}
 
 function getTitle (val) {
-	var title = val.replace ('_', ' ');
+	var title = val.replace (/_/g, ' ');
 	return title.charAt (0).toUpperCase () + title.slice (1);
 }
 
 function getStoryById () {
 	var data = JSON.parse (window.localStorage.getItem ("stories"));
-	var obj = data[getUrlId ()];
-
-	return obj;
+	return data[getUrlId ()];
 }
 
 function getStories () {
@@ -163,7 +161,7 @@ function getStories () {
 		stories.enhanceWithin ();
 	}
 	else {
-		$.when (sendAjax ({}, 'get-text-stories')).then (function (data) {
+		$.when (sendAjax ({}, 'get-stories')).then (function (data) {
 			window.localStorage.setItem ("stories", JSON.stringify (data));
 			stories.html (parseStories (data));
 			stories.enhanceWithin ();
@@ -353,46 +351,50 @@ function getUrlId () {
 var mediaTimer = null;
 var mediaDuration = null;
 
-function playAudio (my_media) {
+function playAudio () {
+	var src = window.localStorage.getItem ("src");
+	my_media = new Media (src, onSuccess, onError, mediaStatus);
+
 	my_media.play ();
 
-	updateFileSize (my_media);
-	updateMediaPosition (my_media);
+	updateFileSize ();
+	updateMediaPosition ();
 }
 
-function updateFileSize (my_media) {
+function updateFileSize () {
 	if (mediaDuration == null) {
 		mediaDuration = setInterval (function () {
 			var mediaDuration = $ ('#media_duration');
 			var timeSlider = $ ('#time_slider');
 			dur = my_media.getDuration ();
 			var newDur = 0;
-			if (dur < 60) {
+			if (dur >= 0 && dur < 60) {
 				newDur = Math.round (dur);
 				mediaDuration.html (newDur + " seconds");
 				timeSlider.attr ('max', newDur);
 			}
-			else {
+			else if (dur >= 0) {
 				newDur = Math.round (dur) / 60;
 				mediaDuration.html (newDur + " min");
-				timeSlider.attr ('max', newDur);
+				timeSlider.attr ('max', newDur * 60);
 			}
 		}, 1000);
 	}
 }
 
-function updateMediaPosition (my_media) {
-	// Update my_media position every second
+// Update my_media position every second
+function updateMediaPosition () {
 	if (mediaTimer == null) {
 		mediaTimer = setInterval (function () {
-			// get my_media position
-			my_media.getCurrentPosition (// success callback
+			my_media.getCurrentPosition (
 				function (position) {
 					if (position > -1) {
-						setChapters (position, dur);
+						roundPosition = Math.round (position);
+						roundDur = Math.round (dur);
+
 						setAudioPosition (Math.ceil (position));
 					}
-				}, // error callback
+				},
 				function (e) {
 					console.log ("Error getting pos=" + e);
 					setAudioPosition ("Error: " + e);
@@ -401,59 +403,66 @@ function updateMediaPosition (my_media) {
 	}
 }
 
-// setChapters
-function setChapters (position, dur) {
-	var interactivity = $ ('#interactivity');
-	var roundPosition = Math.round (position);
-	var roundDur = Math.round (dur);
+// mediaStatus Callback
+function mediaStatus (status) {
+	console.log ('+++' + "media status: " + status);
 
-	if (interactivity.val () === 'off') {
-		if (roundPosition === roundDur) {
-			playNextChapter ();
-		}
-	}
-	if (interactivity.val () === 'on') {
-		if (roundPosition === roundDur - 10) {
+	if (status === 4) { // stop or finidh
+		if (roundPosition === (roundDur - 1) || roundPosition == roundDur) { // finish
+			stopAudio ();
 			showInteractivityControls ();
 		}
 	}
 }
 
-function playNextChapter () {
-	mediaTimer = null;
-	mediaDuration = null;
-	dur = null;
-	var curChapter = parseInt (window.localStorage.getItem ("chapter")) + 1;
-	window.localStorage.setItem ("chapter", curChapter);
-
-	stopAudio (my_media);
-	my_media = new Media (audioChapters[curChapter], onSuccess, onError, mediaStatus);
-	playAudio (my_media);
-}
-
 function showInteractivityControls () {
 
+	var pos = window.localStorage.getItem ("go-to");
+
+	$ ('#options').html (optionsDialog (obj.options[pos + '_']));
+	$ ('#optionsDialog').trigger ('create').popup ('open');
+
+	$ ('.select_option').on ("vclick", function () {
+		var goTo = $ (this).data ("goTo");
+		window.localStorage.setItem ("go-to", goTo);
+		$ ('#optionsDialog').popup ('close');
+		playChapter (goTo);
+	});
+}
+
+function playChapter (goTo) {
+	var u = window.localStorage.getItem ("base_url");
+	var v = u + '_' + goTo + ".mp3";
+	dur = null;
+	window.localStorage.setItem ("src", v);
+
+	console.log ('************' + v);
+
+	playAudio ();
 }
 
 // Pause audio
-function pauseAudio (my_media) {
+function pauseAudio () {
 	if (my_media) {
 		my_media.pause ();
 	}
 }
 
 // Stop audio
-function stopAudio (my_media) {
+function stopAudio () {
 	if (my_media) {
 		my_media.stop ();
+		releaseAudio ();
 	}
 	setAudioPosition (0);
 	clearInterval (mediaTimer);
+	clearInterval (mediaDuration);
 	mediaTimer = null;
+	mediaDuration = null;
 }
 
 // Release audio
-function releaseAudio (my_media) {
+function releaseAudio () {
 	if (my_media) {
 		my_media.release ();
 	}
@@ -464,15 +473,10 @@ function onSuccess () {
 	console.log ("playAudio(): Audio Success");
 }
 
-function seekAudio (my_media, timerVal) {
+function seekAudio (timerVal) {
 	if (my_media) {
 		my_media.seekTo (timerVal);
 	}
-}
-
-// mediaStatus Callback
-function mediaStatus (status) {
-	console.log (status);
 }
 
 // onError Callback
@@ -487,6 +491,15 @@ function setAudioPosition (position) {
 // Get audio position
 function getAudioPosition () {
 	$ ('#time_slider').val ();
+}
+
+function optionsDialog (options) {
+	var opt = '';
+	$.each (options, function (key, val) {
+		opt += '<a href="#" data-role="button" class="select_option" data-go-to="' + val.go_to + '" data-theme="b">' + val.question + '</a>';
+	});
+
+	return opt;
 }
 
 String.prototype.toHHMMSS = function () {
