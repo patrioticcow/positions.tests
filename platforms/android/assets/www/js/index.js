@@ -36,60 +36,67 @@ var app = {
 	}
 };
 
+$ (function () {
+	FastClick.attach (document.body);
+});
+
 var rest = 'http://sex.123easywebsites.com/rest/',
 	madiaUrl = 'http://sex.123easywebsites.com/audio/',
 	my_media = null,
 	dur = null,
-	audioChapters = [],
 	baseUrl = null,
 	roundPosition = null,
 	roundDur = null,
+	email = window.localStorage.getItem ("email"),
+	user_id = window.localStorage.getItem ("user_id"),
 	obj = null;
 
 $ (document).on ("pageinit", function () {
 	console.log ("%c first time", "color: blue;");
-
 });
 
 $ (document).on ('pageinit', '#index-page', function () {
-	console.log ("%c pageload loginPage", "color: blue;");
-	var buyButton = document.getElementById ("buy");
-	buyButton.onclick = function (e) {
-
-		// See PayPalMobilePGPlugin.js for full documentation
-		// set environment you want to use
-		window.plugins.PayPalMobile.setEnvironment ("PayPalEnvironmentSandbox");
-
-		// create a PayPalPayment object, usually you would pass parameters dynamically
-		var payment = new PayPalPayment ("1.99", "USD", "Awesome saws");
-		console.log (payment);
-		// define a callback when payment has been completed
-		var completionCallback = function (proofOfPayment) {
-			// TODO: Send this result to the server for verification;
-			// see https://developer.paypal.com/webapps/developer/docs/integration/mobile/verify-mobile-payment/ for details.
-			console.log ("Proof of payment: " + JSON.stringify (proofOfPayment));
-		}
-
-		// define a callback if payment has been canceled
-		var cancelCallback = function (reason) {
-			console.log ("Payment cancelled: " + reason);
-		}
-
-		// launch UI, the PayPal UI will be present on screen until user cancels it or payment completed
-		window.plugins.PayPalMobile.presentPaymentUI ("YOUR_CLIENT_ID", "YOUR_PAYPAL_EMAIL_ADDRESS", "someuser@somedomain.com", payment, completionCallback, cancelCallback);
+	if (email) {
+		$ ('#login_button').addClass ('ui-state-disabled');
+		$ ('#register_button').addClass ('ui-state-disabled');
 	}
 });
 
 $ (document).on ('pageshow', '#main-page', function () {
-	console.log ("%c pageload mainPage", "color: blue;");
+	console.log ('pagebeforeshow main-page');
 	getStories ();
+
+	$ ('.paypall_buy_button').on ("click", function () {
+		var price = $ (this).data ('price');
+		var desc = $ (this).data ('desc');
+		var story_id = $ (this).data ('story');
+
+		buy (price, desc, story_id);
+	});
+
+	var y = '{"payment":{"short_description":"My fantezy a","amount":"1","currency_code":"USD"},"client":{"platform":"Android","paypal_sdk_version":"1.2.0","product_name":"PayPal Android SDK; ","environment":"sandbox"},"proof_of_payment":{"rest_api":{"state":"approved","payment_id":"PAY-6TG13357KT073371WKJPBDQQ"}}}';
+	var x = JSON.parse (y);
+	//setPayments (x);
+
+});
+
+$ (document).on ('pageshow', '#user-stories-page', function () {
+	console.log ('pagebeforeshow user-stories-page');
+	getUserStories ();
 });
 
 $ (document).on ('pageshow', '#text-page', function () {
+	console.log ('pagebeforeshow text-page');
 	obj = getStoryById ();
+	var storyContainer = $ ('.story');
 
-	$ ('.title').html ('<h3>' + obj.title + '</h3>');
-	$ ('.story').html (obj.story);
+	if (typeof getUrlSampleId () !== 'undefined') {
+		storyContainer.html (obj.story.truncate (1000));
+	}
+	else {
+		$ ('.title').html ('<h3>' + obj.title + '</h3>');
+		storyContainer.html (obj.story);
+	}
 });
 
 $ (document).on ('pageshow', '#audio-page', function () {
@@ -104,28 +111,28 @@ $ (document).on ('pageshow', '#audio-page', function () {
 	}
 
 	// set initial media file to play
-	window.localStorage.setItem ("src", madiaUrl + obj.title + '/' + obj.title + ".mp3");
+	window.localStorage.setItem ("src", baseUrl + ".mp3");
 	$ ('#interactivity').on ('change', function () {
 		stopAudio ();
 		if ($ (this).val () === 'on') {
-			window.localStorage.setItem ("src", madiaUrl + obj.title + '/' + obj.title + '_1' + ".mp3");
+			window.localStorage.setItem ("src", baseUrl + '_1' + ".mp3");
 		}
 		else {
-			window.localStorage.setItem ("src", madiaUrl + obj.title + '/' + obj.title + ".mp3");
+			window.localStorage.setItem ("src", baseUrl + ".mp3");
 		}
 	});
 
 	// set file title
 	$ ('.media_name').html (getTitle (obj.title));
 
-	$ ('.playAudio').on ("vclick", function () {
+	$ ('.playAudio').on ("click", function () {
 		window.localStorage.setItem ("go-to", 1);
 		playAudio ();
 	});
-	$ ('.pauseAudio').on ("vclick", function () {
+	$ ('.pauseAudio').on ("click", function () {
 		pauseAudio ();
 	});
-	$ ('.stopAudio').on ("vclick", function () {
+	$ ('.stopAudio').on ("click", function () {
 		stopAudio ();
 	});
 
@@ -169,14 +176,59 @@ function getStories () {
 	}
 }
 
+function getUserStories () {
+	var stories = $ ('#user-stories');
+	var storiesStorage = window.localStorage.getItem ("user-stories");
+
+	if (storiesStorage) {
+		stories.html (parseStories (JSON.parse (storiesStorage)));
+		stories.enhanceWithin ();
+	}
+	else {
+		$.when (sendAjax ({user_id: user_id}, 'get-user-stories')).then (function (data) {
+			window.localStorage.setItem ("user-stories", JSON.stringify (data));
+			stories.html (parseStories (data));
+			stories.enhanceWithin ();
+		});
+	}
+}
+
 function parseStories (data) {
-	var html = '<ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true">';
+	var html = '';
+	if (!$.isEmptyObject (data)) {
+		html += '<ul data-role="listview" data-autodividers="true" data-filter="true" data-theme="a" data-inset="true">';
 
-	$.each (data, function (index, value) {
-		html += '<li>' + '<div data-role="collapsible">' + '<h4>' + value.title + '</h4>' + '<a href="audio.html?id=' + index + '" class="ui-btn ui-btn-inline">play audio</a>' + '<a href="text.html?id=' + index + '" class="ui-btn ui-btn-inline">read text</a>' + '</div>' + '</li>';
-	});
+		$.each (data, function (index, value) {
+			var p = '';
+			if(typeof value.user_id === 'undefined') {
+				p = '<span style="float: right;">$' + value.price + '</span>';
+			}
 
-	html += '</ul>';
+			var d = '<span class="small_date"><small> - added on ' + value.created.mday + '.' + value.created.mon + '.' + value.created.year + '</small></span>';
+
+			html += '<li>';
+				html += '<div data-role="collapsible">';
+				html += '<h5>' + value.title + p + d + '</h5>';
+
+				if (value.is_free === '1' || typeof value.user_id !== 'undefined') {
+					html += '<a class="ui-btn ui-btn-inline" href="audio.html?id=' + index + '" class="ui-btn ui-btn-inline">audio version</a>';
+					html += '<a class="ui-btn ui-btn-inline" href="text.html?id=' + index + '" class="ui-btn ui-btn-inline">text version</a>';
+				}
+				else if(typeof value.user_id === 'undefined') {
+					html += '<button class="ui-btn ui-btn-inline paypall_buy_button" data-story="' + value.id + '" data-desc="' + getTitle (value.title) + '" data-price="' + value.price + '">buy story</button>';
+					html += '<a class="ui-btn ui-btn-inline" href="text.html?id=' + index + '&sample=true" class="ui-btn ui-btn-inline">text sample</a>';
+				}
+				html += '</div>';
+			html += '</li>';
+		});
+
+		html += '</ul>';
+	}
+	else {
+		html += '<div class="ui-body ui-body-c ui-corner-all" style="text-align: center;">';
+		html += '<h2>You have no Stories</h2>';
+		html += '</ul>';
+	}
 
 	return html;
 }
@@ -185,7 +237,7 @@ function parseForm () {
 	/**
 	 * login
 	 */
-	$ ('#login_submit').on ('vclick', function (e) {
+	$ ('#login_submit').on ('click', function (e) {
 		e.preventDefault ();
 		var loginForm = $ ('#login_form').serializeArray ();
 
@@ -198,7 +250,7 @@ function parseForm () {
 				}
 				else if (data.id != null) {
 					setInitialValues (data);
-					$.mobile.changePage ("main.html", {reloadPage: true});
+					$.mobile.changePage ("index.html", {reloadPage: true});
 				}
 				else {
 					showAlert ('There was a problen with our system. We are on it!', '');
@@ -210,7 +262,7 @@ function parseForm () {
 	/**
 	 * register
 	 */
-	$ ('#register_submit').on ('vclick', function (e) {
+	$ ('#register_submit').on ('click', function (e) {
 		e.preventDefault ();
 		var registerForm = $ ('#register_form').serializeArray ();
 
@@ -346,6 +398,10 @@ function getUrlId () {
 	var url = purl ();
 	return purl (url.attr ('fragment')).param ('id');
 }
+function getUrlSampleId () {
+	var url = purl ();
+	return purl (url.attr ('fragment')).param ('sample');
+}
 
 //////////////////////////////////////////////
 var mediaTimer = null;
@@ -422,11 +478,14 @@ function showInteractivityControls () {
 	$ ('#options').html (optionsDialog (obj.options[pos + '_']));
 	$ ('#optionsDialog').trigger ('create').popup ('open');
 
-	$ ('.select_option').on ("vclick", function () {
+	$ ('.select_option').on ("click", function () {
 		var goTo = $ (this).data ("goTo");
-		window.localStorage.setItem ("go-to", goTo);
-		$ ('#optionsDialog').popup ('close');
-		playChapter (goTo);
+
+		if (typeof goTo !== 'undefined') {
+			window.localStorage.setItem ("go-to", goTo);
+			$ ('#optionsDialog').popup ('close');
+			playChapter (goTo);
+		}
 	});
 }
 
@@ -498,22 +557,49 @@ function optionsDialog (options) {
 	$.each (options, function (key, val) {
 		opt += '<a href="#" data-role="button" class="select_option" data-go-to="' + val.go_to + '" data-theme="b">' + val.question + '</a>';
 	});
+	opt += '<a href="#" data-role="button" class="select_option" data-go-to="1" data-theme="a">Restart Story</a>';
+	opt += '<a href="#" data-role="button" class="select_option ui-group-theme-c" data-rel="back">Close</a>';
 
 	return opt;
 }
 
-String.prototype.toHHMMSS = function () {
-	var sec_num = parseInt (this, 10);
-	var hours = Math.floor (sec_num / 3600);
-	var minutes = Math.floor ((sec_num - (hours * 3600)) / 60);
-	var seconds = sec_num - (hours * 3600) - (minutes * 60);
+function buy (price, desc, story_id) {
+	window.plugins.PayPalMobile.setEnvironment ("PayPalEnvironmentSandbox");
 
-	if (minutes < 10) {
-		minutes = "0" + minutes;
+	var payment = new PayPalPayment (price, "USD", desc);
+	console.log (payment);
+
+	var completionCallback = function (proofOfPayment) {
+		// see https://developer.paypal.com/webapps/developer/docs/integration/mobile/verify-mobile-payment/ for details.
+		console.log ("Proof of payment: " + JSON.stringify (proofOfPayment));
+		alert ('Payment was successful');
+		setPayments (proofOfPayment, story_id);
 	}
-	if (seconds < 10) {
-		seconds = "0" + seconds;
+
+	var cancelCallback = function (reason) {
+		console.log ("Payment cancelled: " + reason);
 	}
-	var time = minutes + ':' + seconds;
-	return time;
+
+	window.plugins.PayPalMobile.presentPaymentUI (
+		"AVbxWxDm64rHf1jT6aBXzECf8xZQuwbjF7GxgPeHZgjPkrFmapuqr2GBlTal",
+		"123websitesmadeeasy@gmail.com",
+		email,
+		payment,
+		completionCallback,
+		cancelCallback
+	);
 }
+
+function setPayments (proofOfPayment, story_id) {
+	$.when (sendAjax ({params: proofOfPayment, user_id: user_id, story_id: story_id}, 'set-payments')).then (function (data) {
+		console.log (data);
+	});
+}
+
+String.prototype.truncate =
+	function (n, useWordBoundary) {
+		var toLong = this.length > n,
+			s_ = toLong ? this.substr (0, n - 1) : this;
+		s_ = useWordBoundary && toLong ? s_.substr (0, s_.lastIndexOf (' ')) : s_;
+		return  toLong ? s_ + '&hellip;' : s_;
+	};

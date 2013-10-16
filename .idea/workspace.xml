@@ -9,7 +9,14 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c1885fe-72e9-4668-ab0e-7d45b1bdc594" name="Default" comment="" />
+    <list default="true" id="9c1885fe-72e9-4668-ab0e-7d45b1bdc594" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/libs/fastclick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/my_stories.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/audio.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/audio.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/faq.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/main.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="sex.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,32 +79,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="audio.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="audio.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/audio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="18" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.38589212" vertical-offset="374" max-vertical-offset="1200">
+            <state line="8" column="103" selection-start="300" selection-end="300" vertical-scroll-proportion="-5.5172415" vertical-offset="0" max-vertical-offset="1200">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="419" column="52" selection-start="11368" selection-end="11368" vertical-scroll-proportion="0.0" vertical-offset="5180" max-vertical-offset="7420">
+            <state line="209" column="56" selection-start="5954" selection-end="5954" vertical-scroll-proportion="0.5580609" vertical-offset="2965" max-vertical-offset="9220">
               <folding>
                 <element signature="e#10#1114#0" expanded="false" />
-                <element signature="e#4271#4289#0" expanded="false" />
-                <element signature="e#4351#4369#0" expanded="false" />
                 <element signature="n#!!block;n#parseForm#0" expanded="false" />
                 <element signature="n#!!block;n#validateForms#0" expanded="false" />
-                <element signature="e#7252#8332#0" expanded="false" />
                 <element signature="n#!!block;n#setInitialValues#0" expanded="false" />
+                <marker date="1381904584083" expanded="true" signature="5686:5699" placeholder="..." />
+                <marker date="1381904584083" expanded="true" signature="6881:6900" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="63" selection-start="679" selection-end="679" vertical-scroll-proportion="3.4482758" vertical-offset="420" max-vertical-offset="1520">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,22 +144,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/functions.js" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/paypal/android/sdk/phonegap/PayPalMobilePGPlugin.java" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/PayPalMobilePGPlugin.js" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/register.html" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/faq.html" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/css/index.css" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/main.html" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/jquery.URI.js" />
         <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
         <option value="$PROJECT_DIR$/platforms/android/project.properties" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/text.html" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/google.fastbutton.js" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/main.html" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/faq.html" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/my_stories.html" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/fastclick.js" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/libs/jqm/jquery.mobile-1.4.0-beta.1.css" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/css/index.css" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/audio.html" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" />
       </list>
     </option>
   </component>
@@ -174,6 +198,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -242,10 +268,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,11 +340,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\sex\platforms\android\assets\www" />
+      <recent name="C:\xampp\htdocs\sex\platforms\android\assets\www\js\libs\jqm" />
       <recent name="C:\xampp\htdocs\sex\platforms\android\assets\www\js\libs" />
       <recent name="C:\xampp\htdocs\sex\platforms\android\libs" />
-      <recent name="C:\xampp\htdocs\sex\platforms\android\assets\www" />
       <recent name="C:\xampp\htdocs\sex\platforms\android\assets\www\js\libs\jquery" />
-      <recent name="C:\xampp\htdocs\sex\platforms\android\assets\www\js\libs\jqm" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.android">
@@ -577,45 +645,47 @@
       <workItem from="1381288847326" duration="6928000" />
       <workItem from="1381381399364" duration="2612000" />
       <workItem from="1381467549288" duration="9107000" />
-      <workItem from="1381547036200" duration="23068000" />
+      <workItem from="1381547036200" duration="35364000" />
+      <workItem from="1381891762048" duration="18000" />
+      <workItem from="1381891815531" duration="12566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80494000" />
+    <option name="totallyTimeSpent" value="105374000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="1044" extended-state="7" />
-    <editor active="false" />
+    <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39200863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19263607" sideWeight="0.67" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3423326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39308855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -635,118 +705,219 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/libs/jquery.URI.js">
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/cordova.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="266" column="3" selection-start="7079" selection-end="7079" vertical-scroll-proportion="0.0" vertical-offset="4497" max-vertical-offset="5440" />
+        <state line="686" column="21" selection-start="22476" selection-end="22476" vertical-scroll-proportion="0.60784316" vertical-offset="13410" max-vertical-offset="42140" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/src/org/apache/cordova/deviceorientation/CompassListener.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="13" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.18306637" vertical-offset="0" max-vertical-offset="5260">
+        <state line="1181" column="7" selection-start="18239" selection-end="18239" vertical-scroll-proportion="0.33208954" vertical-offset="23442" max-vertical-offset="76060" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/libs/jqm/jquery.mobile-1.4.0-beta.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="55" selection-start="192540" selection-end="192540" vertical-scroll-proportion="0.1578354" vertical-offset="0" max-vertical-offset="887" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1280" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="74" selection-end="74" vertical-scroll-proportion="0.33208954" vertical-offset="2" max-vertical-offset="18380" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/faq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="11" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="520">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/src/org/apache/cordova/media/AudioHandler.java">
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/my_stories.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="13" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.36613274" vertical-offset="0" max-vertical-offset="6700" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/plugins/org.apache.cordova.media/www/MediaError.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="40" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.6864989" vertical-offset="0" max-vertical-offset="1240" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="81" selection-start="1967" selection-end="1967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="33" selection-start="2233" selection-end="2233" vertical-scroll-proportion="0.45080093" vertical-offset="586" max-vertical-offset="1460">
+        <state line="3" column="15" selection-start="128" selection-end="128" vertical-scroll-proportion="-2.0689654" vertical-offset="0" max-vertical-offset="500">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="24" selection-start="189" selection-end="196" vertical-scroll-proportion="0.16568047" vertical-offset="0" max-vertical-offset="845">
+        <state line="13" column="92" selection-start="334" selection-end="410" vertical-scroll-proportion="-8.965517" vertical-offset="0" max-vertical-offset="500">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/plugins/org.apache.cordova.media/www/Media.js">
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/libs/jqm/jquery.mobile-1.4.0-beta.1.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="16" selection-start="3578" selection-end="3578" vertical-scroll-proportion="0.33295193" vertical-offset="1929" max-vertical-offset="4040" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/project.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.045766592" vertical-offset="0" max-vertical-offset="874" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/text.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="543" selection-end="543" vertical-scroll-proportion="0.43528065" vertical-offset="0" max-vertical-offset="873">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="887">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/cordova.js">
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/libs/jqm/jquery.mobile-1.4.0-beta.1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="686" column="21" selection-start="22476" selection-end="22476" vertical-scroll-proportion="0.60784316" vertical-offset="13410" max-vertical-offset="42140">
+        <state line="4259" column="0" selection-start="215014" selection-end="215035" vertical-scroll-proportion="0.32356256" vertical-offset="84893" max-vertical-offset="112780">
+          <folding>
+            <element signature="e#341#1391#2" expanded="true" />
+            <element signature="e#1445#2470#2" expanded="true" />
+            <element signature="e#2524#3549#2" expanded="true" />
+            <element signature="e#3601#4614#2" expanded="true" />
+            <element signature="e#4666#5680#2" expanded="true" />
+            <element signature="e#5732#6745#2" expanded="true" />
+            <element signature="e#6799#7824#2" expanded="true" />
+            <element signature="e#7878#8903#2" expanded="true" />
+            <element signature="e#8955#9969#2" expanded="true" />
+            <element signature="e#10019#11447#2" expanded="true" />
+            <element signature="e#11500#12828#2" expanded="true" />
+            <element signature="e#12879#14231#2" expanded="true" />
+            <element signature="e#14283#15285#2" expanded="true" />
+            <element signature="e#15337#16339#2" expanded="true" />
+            <element signature="e#16391#17393#2" expanded="true" />
+            <element signature="e#17445#18447#2" expanded="true" />
+            <element signature="e#18552#19596#2" expanded="true" />
+            <element signature="e#19646#20900#2" expanded="true" />
+            <element signature="e#20950#22226#2" expanded="true" />
+            <element signature="e#22275#24461#2" expanded="true" />
+            <element signature="e#24510#25519#2" expanded="true" />
+            <element signature="e#25567#26765#2" expanded="true" />
+            <element signature="e#26814#29845#2" expanded="true" />
+            <element signature="e#29895#30989#2" expanded="true" />
+            <element signature="e#31038#32088#2" expanded="true" />
+            <element signature="e#32137#33302#2" expanded="true" />
+            <element signature="e#33354#34896#2" expanded="true" />
+            <element signature="e#34945#36214#2" expanded="true" />
+            <element signature="e#36269#37258#2" expanded="true" />
+            <element signature="e#37307#38521#2" expanded="true" />
+            <element signature="e#38572#39865#2" expanded="true" />
+            <element signature="e#39918#41060#2" expanded="true" />
+            <element signature="e#41110#42079#2" expanded="true" />
+            <element signature="e#42133#43691#2" expanded="true" />
+            <element signature="e#43740#44757#2" expanded="true" />
+            <element signature="e#44806#46340#2" expanded="true" />
+            <element signature="e#46390#48066#2" expanded="true" />
+            <element signature="e#48115#49170#2" expanded="true" />
+            <element signature="e#49220#50881#2" expanded="true" />
+            <element signature="e#50933#52196#2" expanded="true" />
+            <element signature="e#52248#53291#2" expanded="true" />
+            <element signature="e#53343#54685#2" expanded="true" />
+            <element signature="e#54734#56014#2" expanded="true" />
+            <element signature="e#56066#57156#2" expanded="true" />
+            <element signature="e#57205#58254#2" expanded="true" />
+            <element signature="e#58302#59366#2" expanded="true" />
+            <element signature="e#59415#60463#2" expanded="true" />
+            <element signature="e#60513#61620#2" expanded="true" />
+            <element signature="e#61670#62845#2" expanded="true" />
+            <element signature="e#62896#63957#2" expanded="true" />
+            <element signature="e#64056#65084#2" expanded="true" />
+            <element signature="e#65185#66176#2" expanded="true" />
+            <element signature="e#66281#67284#2" expanded="true" />
+            <element signature="e#67389#68392#2" expanded="true" />
+            <element signature="e#68493#69485#2" expanded="true" />
+            <element signature="e#69586#70577#2" expanded="true" />
+            <element signature="e#70678#71670#2" expanded="true" />
+            <element signature="e#71775#72778#2" expanded="true" />
+            <element signature="e#72883#73886#2" expanded="true" />
+            <element signature="e#73983#75389#2" expanded="true" />
+            <element signature="e#75492#76798#2" expanded="true" />
+            <element signature="e#76897#78227#2" expanded="true" />
+            <element signature="e#78328#79308#2" expanded="true" />
+            <element signature="e#79409#80389#2" expanded="true" />
+            <element signature="e#80490#81470#2" expanded="true" />
+            <element signature="e#81571#82551#2" expanded="true" />
+            <element signature="e#82773#83795#2" expanded="true" />
+            <element signature="e#83892#85124#2" expanded="true" />
+            <element signature="e#85221#86475#2" expanded="true" />
+            <element signature="e#86570#88734#2" expanded="true" />
+            <element signature="e#88829#89816#2" expanded="true" />
+            <element signature="e#89909#91085#2" expanded="true" />
+            <element signature="e#91180#94189#2" expanded="true" />
+            <element signature="e#94286#95358#2" expanded="true" />
+            <element signature="e#95453#96481#2" expanded="true" />
+            <element signature="e#96576#97719#2" expanded="true" />
+            <element signature="e#97814#99061#2" expanded="true" />
+            <element signature="e#99162#100682#2" expanded="true" />
+            <element signature="e#100789#101756#2" expanded="true" />
+            <element signature="e#101851#103043#2" expanded="true" />
+            <element signature="e#103166#104437#2" expanded="true" />
+            <element signature="e#104540#105660#2" expanded="true" />
+            <element signature="e#105757#106704#2" expanded="true" />
+            <element signature="e#106809#108345#2" expanded="true" />
+            <element signature="e#108440#109435#2" expanded="true" />
+            <element signature="e#109530#111042#2" expanded="true" />
+            <element signature="e#111139#112793#2" expanded="true" />
+            <element signature="e#112888#113921#2" expanded="true" />
+            <element signature="e#114018#115657#2" expanded="true" />
+            <element signature="e#115758#116999#2" expanded="true" />
+            <element signature="e#117100#118121#2" expanded="true" />
+            <element signature="e#118222#119542#2" expanded="true" />
+            <element signature="e#119637#120895#2" expanded="true" />
+            <element signature="e#120996#122064#2" expanded="true" />
+            <element signature="e#122159#123186#2" expanded="true" />
+            <element signature="e#123279#124321#2" expanded="true" />
+            <element signature="e#124416#125442#2" expanded="true" />
+            <element signature="e#125539#126624#2" expanded="true" />
+            <element signature="e#126721#127874#2" expanded="true" />
+            <element signature="e#127973#129012#2" expanded="true" />
+            <element signature="e#202152#202239#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/libs/fastclick.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="0" selection-start="2854" selection-end="2854" vertical-scroll-proportion="2.886133" vertical-offset="0" max-vertical-offset="14420">
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/libs/PayPalMobilePGPlugin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="65" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.8300395" vertical-offset="240" max-vertical-offset="1280">
+        <state line="34" column="23" selection-start="912" selection-end="912" vertical-scroll-proportion="0.33333334" vertical-offset="380" max-vertical-offset="2140">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1181" column="7" selection-start="18239" selection-end="18239" vertical-scroll-proportion="0.33208954" vertical-offset="23442" max-vertical-offset="76060">
+        <state line="17" column="0" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.33333334" vertical-offset="100" max-vertical-offset="18380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="419" column="52" selection-start="11368" selection-end="11368" vertical-scroll-proportion="0.0" vertical-offset="5180" max-vertical-offset="7420">
-          <folding>
-            <element signature="e#10#1114#0" expanded="false" />
-            <element signature="e#4271#4289#0" expanded="false" />
-            <element signature="e#4351#4369#0" expanded="false" />
-            <element signature="n#!!block;n#parseForm#0" expanded="false" />
-            <element signature="n#!!block;n#validateForms#0" expanded="false" />
-            <element signature="e#7252#8332#0" expanded="false" />
-            <element signature="n#!!block;n#setInitialValues#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/audio.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="18" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.38589212" vertical-offset="374" max-vertical-offset="1200">
+        <state line="8" column="103" selection-start="300" selection-end="300" vertical-scroll-proportion="-5.5172415" vertical-offset="0" max-vertical-offset="1200">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="63" selection-start="679" selection-end="679" vertical-scroll-proportion="3.4482758" vertical-offset="420" max-vertical-offset="1520">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="209" column="56" selection-start="5954" selection-end="5954" vertical-scroll-proportion="0.5580609" vertical-offset="2965" max-vertical-offset="9220">
+          <folding>
+            <element signature="e#10#1114#0" expanded="false" />
+            <element signature="n#!!block;n#parseForm#0" expanded="false" />
+            <element signature="n#!!block;n#validateForms#0" expanded="false" />
+            <element signature="n#!!block;n#setInitialValues#0" expanded="false" />
+            <marker date="1381904584083" expanded="true" signature="5686:5699" placeholder="..." />
+            <marker date="1381904584083" expanded="true" signature="6881:6900" placeholder="..." />
           </folding>
         </state>
       </provider>

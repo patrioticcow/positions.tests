@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" type="text/css" href="js/libs/jqm/jquery.mobile-1.4.0-beta.1.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
@@ -11,21 +11,32 @@
         <div data-role="page" id="index-page" data-theme="b">
 
             <div data-role="header" data-position="fixed">
-                <h1>Home</h1>
+                <h1>123 Easy Audio Stories</h1>
             </div>
 
-            <div data-role="content" style="text-align: center">
-                <p>Page content goes here.</p>
-                <a href="" data-role="button" id="buy">Paypall Test Buy</a>
-                <a href="main.html">main link</a>
+            <div data-role="content" style="text-align: center;">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a class="ui-btn but_blue" href="main.html">All Stories</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a class="ui-btn but_purple" href="my_stories.html">My Stories</a>
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a class="ui-btn but_orange" href="login.html">Login</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a class="ui-btn but_green" href="register.html">Register</a>
+                    </div>
+                </div>
             </div>
 
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
                         <li><a href="index.html" class="ui-btn-active" data-icon="home">Home</a></li>
-                        <li><a href="login.html" data-icon="arrow-l">Login</a></li>
-                        <li><a href="register.html" data-icon="arrow-r">Register</a></li>
                         <li><a href="faq.html" data-icon="gear">FAQ</a></li>
                     </ul>
                 </div>
@@ -43,10 +54,11 @@
                 $.mobile.buttonMarkup.hoverDelay = 0;
                 $.mobile.defaultPageTransition = 'none';
                 $.mobile.defaultDialogTransition = 'pop';
-                $.mobile.useFastClick = true;
+                $.mobile.useFastClick = false;
             });
         </script>
         <script type="text/javascript" src="js/libs/jqm/jquery.mobile-1.4.0-beta.1.min.js"></script>
+        <script type="text/javascript" src="js/libs/fastclick.js"></script>
         <script type="text/javascript" src="js/libs/PayPalMobilePGPlugin.js"></script>
         <script type="text/javascript" src="js/libs/jquery.URI.js"></script>
         <script type="text/javascript" src="js/functions.js"></script>
