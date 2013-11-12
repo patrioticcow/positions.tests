@@ -23,16 +23,18 @@ var app = {
 		states[Connection.CELL_3G] = '3G';
 		states[Connection.CELL_4G] = '4G';
 		states[Connection.NONE] = 'None';
+
+		alert (states[networkState]);
 		return states[networkState];
 	},
 	onResume       : function () {
-		showAlert ('onResume', '');
+		alert ('onResume');
 	},
 	onPause        : function () {
-		showAlert ('onResume', '');
+		alert ('onResume');
 	},
 	pressBackButton: function () {
-		showAlert ('onResume', '');
+		alert ('onResume');
 	}
 };
 
@@ -40,8 +42,8 @@ $ (function () {
 	FastClick.attach (document.body);
 });
 
-var rest = 'http://sex.123easywebsites.com/rest/',
-	madiaUrl = 'http://sex.123easywebsites.com/audio/',
+var rest = 'http://audio.stories.massinflux.com/rest/',
+	madiaUrl = 'http://audio.stories.media.massinflux.com/',
 	my_media = null,
 	dur = null,
 	baseUrl = null,
@@ -52,7 +54,7 @@ var rest = 'http://sex.123easywebsites.com/rest/',
 	obj = null;
 
 $ (document).on ("pageinit", function () {
-	console.log ("%c first time", "color: blue;");
+
 });
 
 $ (document).on ('pageinit', '#index-page', function () {
@@ -60,46 +62,57 @@ $ (document).on ('pageinit', '#index-page', function () {
 		$ ('#login_button').addClass ('ui-state-disabled');
 		$ ('#register_button').addClass ('ui-state-disabled');
 	}
+
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function(event) {
+			$(this).jPlayer("setMedia", {
+				mp3: "http://audio.stories.media.massinflux.com/all_she_wants_to_do_is_fuck/all_she_wants_to_do_is_fuck.mp3"
+			});
+		},
+		supplied: "mp3"
+	});
+
 });
 
 $ (document).on ('pageshow', '#main-page', function () {
-	console.log ('pagebeforeshow main-page');
-	getStories ();
+	console.log ('main-page');
+	getCategories ();
+});
 
-	$ ('.paypall_buy_button').on ("click", function () {
+$ (document).on ('pageshow', '#stories-page', function () {
+	console.log ('stories-page');
+
+	var category = getUrlId ('category');
+	getStories (category);
+
+	$ (document).on ("click", '.paypall_buy_button', function () {
 		var price = $ (this).data ('price');
 		var desc = $ (this).data ('desc');
 		var story_id = $ (this).data ('story');
 
 		buy (price, desc, story_id);
 	});
-
-	var y = '{"payment":{"short_description":"My fantezy a","amount":"1","currency_code":"USD"},"client":{"platform":"Android","paypal_sdk_version":"1.2.0","product_name":"PayPal Android SDK; ","environment":"sandbox"},"proof_of_payment":{"rest_api":{"state":"approved","payment_id":"PAY-6TG13357KT073371WKJPBDQQ"}}}';
-	var x = JSON.parse (y);
-	//setPayments (x);
-
 });
 
 $ (document).on ('pageshow', '#user-stories-page', function () {
-	console.log ('pagebeforeshow user-stories-page');
 	getUserStories ();
 });
 
 $ (document).on ('pageshow', '#text-page', function () {
-	console.log ('pagebeforeshow text-page');
 	obj = getStoryById ();
 	var storyContainer = $ ('.story');
 
-	if (typeof getUrlSampleId () !== 'undefined') {
+	if (typeof getUrlId ('sample') !== 'undefined') {
 		storyContainer.html (obj.story.truncate (1000));
 	}
 	else {
-		$ ('.title').html ('<h3>' + obj.title + '</h3>');
+		$ ('.title').html ('<h3>' + getTitle (obj.title) + '</h3>');
 		storyContainer.html (obj.story);
 	}
 });
 
 $ (document).on ('pageshow', '#audio-page', function () {
+	//ensureUserExist ();
 
 	obj = getStoryById ();
 
@@ -135,10 +148,13 @@ $ (document).on ('pageshow', '#audio-page', function () {
 	$ ('.stopAudio').on ("click", function () {
 		stopAudio ();
 	});
-
-	$ ('#time_slider').on ("slidestop", function () {
+	$ ('.time_slider').on ("slidestop", function () {
 		var timerVal = $ (this).val ();
 		seekAudio (timerVal * 1000);
+	});
+	$ ('.restartAudio').on ("click", function () {
+		window.localStorage.setItem ("go-to", 1);
+		playChapter (1);
 	});
 });
 
@@ -149,6 +165,21 @@ $ (document).on ('pageinit', '#register-page', function () {
 	parseForm ();
 });
 
+function ensureUserExist () {
+	var indexLogin = $ ('.index_login');
+	var indexStories = $ ('.index_stories');
+
+	var userId = window.localStorage.getItem ("user_id");
+	if (!userId) {
+		$.mobile.pageContainer.pagecontainer ("change", "login.html", {reloadPage: true});
+		indexLogin.show ();
+	}
+	else {
+		indexStories.show ();
+		indexLogin.hide ();
+	}
+}
+
 function getTitle (val) {
 	var title = val.replace (/_/g, ' ');
 	return title.charAt (0).toUpperCase () + title.slice (1);
@@ -156,28 +187,46 @@ function getTitle (val) {
 
 function getStoryById () {
 	var data = JSON.parse (window.localStorage.getItem ("stories"));
-	return data[getUrlId ()];
+
+	return data[getUrlId ('category')][getUrlId ('id')];
 }
 
-function getStories () {
-	var stories = $ ('#stories');
+function getCategories () {
+	var stories = $ ('.categories');
 	var storiesStorage = window.localStorage.getItem ("stories");
 
 	if (storiesStorage) {
-		stories.html (parseStories (JSON.parse (storiesStorage)));
+		stories.html (parseCategories (JSON.parse (storiesStorage)));
 		stories.enhanceWithin ();
 	}
 	else {
 		$.when (sendAjax ({}, 'get-stories')).then (function (data) {
+			$.mobile.loading ("hide");
 			window.localStorage.setItem ("stories", JSON.stringify (data));
-			stories.html (parseStories (data));
+			stories.html (parseCategories (data));
 			stories.enhanceWithin ();
 		});
 	}
 }
 
+function getStories (category) {
+	console.log ('getStories');
+	var stories = $ ('.stories');
+	var storiesStorage = window.localStorage.getItem ("stories");
+	var obj = JSON.parse (storiesStorage);
+
+	if (storiesStorage) {
+		stories.html (parseStories (obj[category]));
+		stories.enhanceWithin ();
+	}
+	else {
+		$.mobile.pageContainer.pagecontainer ("change", "main.html", {reloadPage: true});
+	}
+}
+
 function getUserStories () {
-	var stories = $ ('#user-stories');
+	console.log ('getUserStories');
+	var stories = $ ('.user-stories');
 	var storiesStorage = window.localStorage.getItem ("user-stories");
 
 	if (storiesStorage) {
@@ -185,40 +234,62 @@ function getUserStories () {
 		stories.enhanceWithin ();
 	}
 	else {
-		$.when (sendAjax ({user_id: user_id}, 'get-user-stories')).then (function (data) {
+		var userId = window.localStorage.getItem ("user_id");
+		$.when (sendAjax ({user_id: userId}, 'get-user-stories')).then (function (data) {
+			$.mobile.loading ("hide");
 			window.localStorage.setItem ("user-stories", JSON.stringify (data));
-			stories.html (parseStories (data));
+			stories.html (parseCategories (data));
 			stories.enhanceWithin ();
 		});
 	}
 }
 
+function parseCategories (data) {
+	var html = '';
+
+	if (!$.isEmptyObject (data)) {
+
+		html += '<ul data-role="listview" data-inset="true">';
+		$.each (data, function (index, value) {
+			html += '<li><a href="stories.html?category=' + index + '">' + getTitle (index) + ' <span class="ui-li-count">' + value.length + '</span></a></li>';
+		});
+		html += '</ul>';
+	}
+	else {
+		html += '<div class="ui-body ui-body-c ui-corner-all" style="text-align: center;">';
+		html += '<h2>You have no Stories</h2>';
+		html += '</ul>';
+	}
+
+	return html;
+}
+
 function parseStories (data) {
 	var html = '';
+	var cat = getUrlId ('category');
 	if (!$.isEmptyObject (data)) {
-		html += '<ul data-role="listview" data-autodividers="true" data-filter="true" data-theme="a" data-inset="true">';
+		html += '<ul data-role="listview" data-autodividers="false" data-filter="true" data-theme="a" data-inset="true">';
 
 		$.each (data, function (index, value) {
 			var p = '';
-			if(typeof value.user_id === 'undefined') {
+			if (typeof value.user_id === 'undefined') {
 				p = '<span style="float: right;">$' + value.price + '</span>';
 			}
 
-			var d = '<span class="small_date"><small> - added on ' + value.created.mday + '.' + value.created.mon + '.' + value.created.year + '</small></span>';
+			var d = '<span class="small_date"> - ' + getTitle (value.category) + '<small> - ' + value.created.mday + '.' + value.created.mon + '.' + value.created.year + '</small></span>';
 
 			html += '<li>';
-				html += '<div data-role="collapsible">';
-				html += '<h5>' + value.title + p + d + '</h5>';
-
-				if (value.is_free === '1' || typeof value.user_id !== 'undefined') {
-					html += '<a class="ui-btn ui-btn-inline" href="audio.html?id=' + index + '" class="ui-btn ui-btn-inline">audio version</a>';
-					html += '<a class="ui-btn ui-btn-inline" href="text.html?id=' + index + '" class="ui-btn ui-btn-inline">text version</a>';
-				}
-				else if(typeof value.user_id === 'undefined') {
-					html += '<button class="ui-btn ui-btn-inline paypall_buy_button" data-story="' + value.id + '" data-desc="' + getTitle (value.title) + '" data-price="' + value.price + '">buy story</button>';
-					html += '<a class="ui-btn ui-btn-inline" href="text.html?id=' + index + '&sample=true" class="ui-btn ui-btn-inline">text sample</a>';
-				}
-				html += '</div>';
+			html += '<div data-role="collapsible">';
+			html += '<h5>' + getTitle (value.title).truncate (20) + p + d + '</h5>';
+			if (value.is_free === '1' || typeof value.user_id !== 'undefined' || value.stories_story_id !== null) {
+				html += '<a class="ui-btn ui-btn-inline" href="audio.html?category=' + cat + '&id=' + index + '" class="ui-btn ui-btn-inline">audio version</a>';
+				html += '<a class="ui-btn ui-btn-inline" href="text.html?category=' + cat + '&id=' + index + '" class="ui-btn ui-btn-inline">text version</a>';
+			}
+			else if (typeof value.user_id === 'undefined') {
+				html += '<button class="ui-btn ui-btn-inline paypall_buy_button" data-story="' + value.id + '" data-desc="' + getTitle (value.title) + '" data-price="' + value.price + '">buy story</button>';
+				html += '<a class="ui-btn ui-btn-inline" href="text.html?category=' + cat + '&id=' + index + '&sample=true" class="ui-btn ui-btn-inline">text sample</a>';
+			}
+			html += '</div>';
 			html += '</li>';
 		});
 
@@ -243,14 +314,14 @@ function parseForm () {
 
 		if (validateForms ('login')) {
 			$.when (sendAjax (loginForm, 'login')).then (function (data) {
-				console.log (data);
-
+				$.mobile.loading ("hide");
 				if (data === 'fail') {
 					showAlert ('Wrong username or password. Please try again', '');
 				}
 				else if (data.id != null) {
-					setInitialValues (data);
-					$.mobile.changePage ("index.html", {reloadPage: true});
+					$.when (setInitialValues (data)).then (function () {
+						$.mobile.pageContainer.pagecontainer ("change", "index.html", {reloadPage: true});
+					});
 				}
 				else {
 					showAlert ('There was a problen with our system. We are on it!', '');
@@ -344,6 +415,7 @@ function validateForms (name) {
 }
 
 function sendAjax (data, type) {
+	$.mobile.loading ("show");
 	return $.ajax ({
 		type    : "GET",
 		dataType: "jsonp",
@@ -353,12 +425,17 @@ function sendAjax (data, type) {
 }
 
 function setInitialValues (data) {
+	var deferred = jQuery.Deferred ();
+
 	window.localStorage.setItem ("user_id", data.id);
 	window.localStorage.setItem ("name", data.name);
 	window.localStorage.setItem ("email", data.email);
 	window.localStorage.setItem ("created_day", data.created.mday);
 	window.localStorage.setItem ("created_month", data.created.mon);
 	window.localStorage.setItem ("created_year", data.created.year);
+
+	deferred.resolve ();
+	return deferred.promise ();
 }
 
 function openLoader () {
@@ -394,13 +471,9 @@ function loader (hide) {
 	}
 }
 
-function getUrlId () {
+function getUrlId (type) {
 	var url = purl ();
-	return purl (url.attr ('fragment')).param ('id');
-}
-function getUrlSampleId () {
-	var url = purl ();
-	return purl (url.attr ('fragment')).param ('sample');
+	return purl (url.attr ('fragment')).param (type);
 }
 
 //////////////////////////////////////////////
@@ -408,7 +481,9 @@ var mediaTimer = null;
 var mediaDuration = null;
 
 function playAudio () {
+	$.mobile.loading ("show");
 	var src = window.localStorage.getItem ("src");
+	console.log (src);
 	my_media = new Media (src, onSuccess, onError, mediaStatus);
 
 	my_media.play ();
@@ -420,8 +495,8 @@ function playAudio () {
 function updateFileSize () {
 	if (mediaDuration == null) {
 		mediaDuration = setInterval (function () {
-			var mediaDuration = $ ('#media_duration');
-			var timeSlider = $ ('#time_slider');
+			var mediaDuration = $ ('.media_duration');
+			var timeSlider = $ ('.time_slider');
 			dur = my_media.getDuration ();
 			var newDur = 0;
 			if (dur >= 0 && dur < 60) {
@@ -461,8 +536,8 @@ function updateMediaPosition () {
 
 // mediaStatus Callback
 function mediaStatus (status) {
-	console.log ('+++' + "media status: " + status);
-
+	console.log ("-------------- media status: " + status);
+	$.mobile.loading ("hide");
 	if (status === 4) { // stop or finidh
 		if (roundPosition === (roundDur - 1) || roundPosition == roundDur) { // finish
 			stopAudio ();
@@ -494,9 +569,6 @@ function playChapter (goTo) {
 	var v = u + '_' + goTo + ".mp3";
 	dur = null;
 	window.localStorage.setItem ("src", v);
-
-	console.log ('************' + v);
-
 	playAudio ();
 }
 
@@ -545,11 +617,11 @@ function onError (error) {
 
 // Set audio position
 function setAudioPosition (position) {
-	$ ('#time_slider').val (position).slider ("refresh");
+	$ ('.time_slider').val (position).slider ("refresh");
 }
 // Get audio position
 function getAudioPosition () {
-	$ ('#time_slider').val ();
+	$ ('.time_slider').val ();
 }
 
 function optionsDialog (options) {
@@ -572,6 +644,7 @@ function buy (price, desc, story_id) {
 	var completionCallback = function (proofOfPayment) {
 		// see https://developer.paypal.com/webapps/developer/docs/integration/mobile/verify-mobile-payment/ for details.
 		console.log ("Proof of payment: " + JSON.stringify (proofOfPayment));
+		window.localStorage.removeItem ("stories");
 		alert ('Payment was successful');
 		setPayments (proofOfPayment, story_id);
 	}
@@ -591,8 +664,10 @@ function buy (price, desc, story_id) {
 }
 
 function setPayments (proofOfPayment, story_id) {
-	$.when (sendAjax ({params: proofOfPayment, user_id: user_id, story_id: story_id}, 'set-payments')).then (function (data) {
-		console.log (data);
+	var userId = window.localStorage.getItem ("user_id");
+	$.when (sendAjax ({params: proofOfPayment, user_id: userId, story_id: story_id}, 'set-payments')).then (function () {
+		$.mobile.loading ("hide");
+		$.mobile.pageContainer.pagecontainer ("change", "index.html", {reloadPage: true});
 	});
 }
 

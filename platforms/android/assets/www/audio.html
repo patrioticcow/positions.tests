@@ -22,16 +22,19 @@
                 </div>
                 <br/>
             </div>
-            <div class="ui-body ui-body-a ui-corner-all">Duration: <strong><span id="media_duration"></span></strong></div>
+            <div class="ui-body ui-body-a ui-corner-all">Duration: <strong><span class="media_duration"></span></strong></div>
             <br/>
             <div class="ui-body ui-body-a ui-corner-all">
-                <input type="range" name="time_slider" id="time_slider" value="0" min="0" max="100" data-highlight="true" />
+                <input type="range" name="time_slider" class="time_slider" value="0" min="0" max="100" data-highlight="true" />
             </div>
             <br/>
-            <div class="ui-grid-b">
+            <div class="ui-grid-a">
                 <div class="ui-block-a"><a href="#" class="playAudio" data-theme="a" data-role="button" data-icon="arrow-r">Play</a></div>
                 <div class="ui-block-b"><a href="#" class="pauseAudio" data-theme="a" data-role="button" data-icon="minus">Pause</a></div>
-                <div class="ui-block-c"><a href="#" class="stopAudio ui-group-theme-c" data-theme="c" data-role="button" data-icon="delete">Stop</a></div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" class="stopAudio" data-theme="a" data-role="button" data-icon="delete">Stop</a></div>
+                <div class="ui-block-b"><a href="#" class="restartAudio" data-theme="a" data-role="button" data-icon="refresh">Restart</a></div>
             </div>
         </div>
 
